@@ -4,12 +4,13 @@
  */
 
 /*Copy this file as "lv_port_indev.c" and set this value to "1" to enable content*/
-#if 0
+#if 1
 
 /*********************
  *      INCLUDES
  *********************/
-#include "lv_port_indev_template.h"
+#include "lv_port_indev.h"
+#include <M5Unified.hpp>
 
 /*********************
  *      DEFINES
@@ -92,6 +93,7 @@ void lv_port_indev_init(void)
     lv_indev_set_type(indev_touchpad, LV_INDEV_TYPE_POINTER);
     lv_indev_set_read_cb(indev_touchpad, touchpad_read);
 
+#if 0
     /*------------------
      * Mouse
      * -----------------*/
@@ -161,6 +163,7 @@ void lv_port_indev_init(void)
         {40, 100},  /*Button 1 -> x:40; y:100*/
     };
     lv_indev_set_button_points(indev_button, btn_points);
+#endif
 }
 
 /**********************
@@ -202,16 +205,17 @@ static bool touchpad_is_pressed(void)
 {
     /*Your code comes here*/
 
-    return false;
+    return M5.Touch.getCount() > 0;
 }
 
 /*Get the x and y coordinates if the touchpad is pressed*/
 static void touchpad_get_xy(int32_t * x, int32_t * y)
 {
     /*Your code comes here*/
+    auto detail = M5.Touch.getDetail();
 
-    (*x) = 0;
-    (*y) = 0;
+    (*x) = detail.x;
+    (*y) = detail.y;
 }
 
 /*------------------
