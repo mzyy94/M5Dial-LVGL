@@ -11,6 +11,7 @@
  *********************/
 #include "lv_port_indev.h"
 #include <M5Unified.hpp>
+#include "encoder.hpp"
 
 /*********************
  *      DEFINES
@@ -56,6 +57,7 @@ lv_indev_t * indev_keypad;
 lv_indev_t * indev_encoder;
 lv_indev_t * indev_button;
 
+Encoder encoder;
 static int32_t encoder_diff;
 static lv_indev_state_t encoder_state;
 
@@ -127,6 +129,7 @@ void lv_port_indev_init(void)
      *add objects to the group with `lv_group_add_obj(group, obj)`
      *and assign this input device to group to navigate in it:
      *`lv_indev_set_group(indev_keypad, group);`*/
+#endif
 
     /*------------------
      * Encoder
@@ -138,13 +141,14 @@ void lv_port_indev_init(void)
     /*Register a encoder input device*/
     indev_encoder = lv_indev_create();
     lv_indev_set_type(indev_encoder, LV_INDEV_TYPE_ENCODER);
-    lv_indev_set_read_cb(indev_touchpad, encoder_read);
+    lv_indev_set_read_cb(indev_encoder, encoder_read);
 
     /*Later you should create group(s) with `lv_group_t * group = lv_group_create()`,
      *add objects to the group with `lv_group_add_obj(group, obj)`
      *and assign this input device to group to navigate in it:
      *`lv_indev_set_group(indev_encoder, group);`*/
 
+#if 0
     /*------------------
      * Button
      * -----------------*/
@@ -327,14 +331,15 @@ static uint32_t keypad_get_key(void)
 static void encoder_init(void)
 {
     /*Your code comes here*/
+    encoder.setup();
 }
 
 /*Will be called by the library to read the encoder*/
 static void encoder_read(lv_indev_t * indev_drv, lv_indev_data_t * data)
 {
 
-    data->enc_diff = encoder_diff;
-    data->state = encoder_state;
+    data->enc_diff = encoder.getCount(true);
+    data->state = M5.BtnA.isPressed() ? LV_INDEV_STATE_PR : LV_INDEV_STATE_REL;
 }
 
 /*Call this function in an interrupt to process encoder events (turn, press)*/
