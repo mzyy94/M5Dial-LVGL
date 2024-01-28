@@ -1,4 +1,6 @@
 # M5Dial-LVGL
+[![PlatformIO CI](https://github.com/mzyy94/M5Dial-LVGL/actions/workflows/ci.yml/badge.svg)](https://github.com/mzyy94/M5Dial-LVGL/actions/workflows/ci.yml)
+
 LVGL porting for M5Dial
 
 ## Usage
