@@ -1,0 +1,29 @@
+{
+  "name": "M5Dial-LVGL",
+  "description": "LVGL porting for M5Dial",
+  "keywords": "M5Stack, M5Dial, LVGL",
+  "authors": [
+    {
+      "name": "mzyy94",
+      "url": "https://github.com/mzyy94"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mzyy94/M5Dial-LVGL.git"
+  },
+  "version": "0.0.1",
+  "frameworks": ["espidf"],
+  "platforms": ["espressif32"],
+  "headers": "M5Dial-LVGL.h",
+  "build": {
+    "flags": [
+      "-DLV_LVGL_H_INCLUDE_SIMPLE",
+      "-DLV_CONF_INCLUDE_SIMPLE"
+    ]
+  },
+  "dependencies": {
+    "m5stack/M5Unified": "0.1.12",
+    "lvgl/lvgl": "9.0.0"
+  }
+}
