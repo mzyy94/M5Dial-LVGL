@@ -11,6 +11,7 @@ jobs:
           - examples/hello_world
           - examples/touch_button
           - examples/dial_number
+          - examples/native_sdl
 
     steps:
       - uses: actions/checkout@v3
