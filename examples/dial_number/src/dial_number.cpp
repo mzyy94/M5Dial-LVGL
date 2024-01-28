@@ -63,19 +63,12 @@ void dial_arc(void)
 
 void main_task(void *)
 {
-    M5.begin();
-    lv_init();
-    lv_port_disp_init();
-    lv_port_indev_init();
-
+    m5dial_lvgl_init();
     dial_arc();
 
     for (;;)
     {
-        M5.update();
-        uint32_t wait_ms = lv_timer_handler();
-        M5.delay(wait_ms);
-        lv_tick_inc(wait_ms);
+        m5dial_lvgl_next();
     }
     vTaskDelete(nullptr);
 }
