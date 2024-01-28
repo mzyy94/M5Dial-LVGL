@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 
+#if defined(ESP_PLATFORM)
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 #include <driver/pulse_cnt.h>
@@ -81,3 +82,4 @@ void Encoder::reset()
 {
     ESP_ERROR_CHECK(pcnt_unit_clear_count(_pcnt_unit));
 }
+#endif

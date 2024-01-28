@@ -14,7 +14,7 @@
   },
   "version": "0.0.1",
   "frameworks": ["espidf"],
-  "platforms": ["espressif32"],
+  "platforms": ["espressif32", "native"],
   "headers": "M5Dial-LVGL.h",
   "build": {
     "flags": [

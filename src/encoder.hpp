@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 
+#if defined(ESP_PLATFORM)
 #include <driver/pulse_cnt.h>
 #include <driver/gpio.h>
 
@@ -20,3 +21,12 @@ public:
     int getCount(bool clear = false);
     void reset();
 };
+#else
+class Encoder
+{
+public:
+    inline void setup(){};
+    inline int getCount(bool clear = false) { return 0; };
+    inline void reset(){};
+};
+#endif
