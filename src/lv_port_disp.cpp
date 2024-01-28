@@ -1,10 +1,4 @@
-/**
- * @file lv_port_disp_templ.c
- *
- */
-
-/*Copy this file as "lv_port_disp.c" and set this value to "1" to enable content*/
-#if 1
+// SPDX-License-Identifier: MIT
 
 /*********************
  *      INCLUDES
@@ -83,7 +77,6 @@ void lv_port_disp_init(void)
 /*Initialize your display and the required peripherals.*/
 static void disp_init(void)
 {
-    /*You code here*/
 }
 
 volatile bool disp_flush_enabled = true;
@@ -119,9 +112,3 @@ static void disp_flush(lv_display_t * disp_drv, const lv_area_t * area, uint8_t 
      *Inform the graphics library that you are ready with the flushing*/
     lv_display_flush_ready(disp_drv);
 }
-
-#else /*Enable this file at the top*/
-
-/*This dummy typedef exists purely to silence -Wpedantic.*/
-typedef int keep_pedantic_happy;
-#endif
