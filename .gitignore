@@ -7,4 +7,8 @@
 examples/**/.vscode
 examples/**/CMakeLists.txt
 examples/**/.gitignore
-examples/**/sdkconfig.*
+examples/**/sdkconfig*
+examples/**/managed_components
+examples/**/dependencies.lock
+build
+!examples/dial_number/**/CMakeLists.txt

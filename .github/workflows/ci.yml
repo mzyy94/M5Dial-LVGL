@@ -3,7 +3,7 @@ name: PlatformIO CI
 on: [push]
 
 jobs:
-  build:
+  build-pio:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -29,3 +29,24 @@ jobs:
 
       - name: Build PlatformIO examples
         run: pio run --project-dir ${{ matrix.example }}
+
+  build-idf:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        example:
+          - examples/dial_number
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ${{ matrix.example }}/build
+            ${{ matrix.example }}/managed_components
+          key: ${{ runner.os }}-idf
+      - uses: espressif/esp-idf-ci-action@v1
+        with:
+          esp_idf_version: v5.1
+          target: esp32s3
+          path: ${{ matrix.example }}
