@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: Copyright 2024 mzyy94
 
 #if defined(ESP_PLATFORM)
 #include <driver/pulse_cnt.h>

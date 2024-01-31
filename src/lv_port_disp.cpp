@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: Copyright 2024 mzyy94
 
 #include "lv_port_disp.h"
 #include <stdbool.h>

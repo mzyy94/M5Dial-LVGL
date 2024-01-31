@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: Copyright 2024 mzyy94
 
 #ifndef M5DIAL_LVGL_H
 #define M5DIAL_LVGL_H
