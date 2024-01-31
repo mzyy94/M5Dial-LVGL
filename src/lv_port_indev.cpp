@@ -5,15 +5,15 @@
 #include "encoder.hpp"
 
 static void touchpad_init(void);
-static void touchpad_read(lv_indev_t * indev, lv_indev_data_t * data);
+static void touchpad_read(lv_indev_t *indev, lv_indev_data_t *data);
 static bool touchpad_is_pressed(void);
-static void touchpad_get_xy(int32_t * x, int32_t * y);
+static void touchpad_get_xy(int32_t *x, int32_t *y);
 
 static void encoder_init(void);
-static void encoder_read(lv_indev_t * indev, lv_indev_data_t * data);
+static void encoder_read(lv_indev_t *indev, lv_indev_data_t *data);
 
-lv_indev_t * indev_touchpad;
-lv_indev_t * indev_encoder;
+lv_indev_t *indev_touchpad;
+lv_indev_t *indev_encoder;
 
 Encoder encoder;
 
@@ -36,16 +36,18 @@ static void touchpad_init(void)
 {
 }
 
-static void touchpad_read(lv_indev_t * indev_drv, lv_indev_data_t * data)
+static void touchpad_read(lv_indev_t *indev_drv, lv_indev_data_t *data)
 {
     static int32_t last_x = 0;
     static int32_t last_y = 0;
 
-    if(touchpad_is_pressed()) {
+    if (touchpad_is_pressed())
+    {
         touchpad_get_xy(&last_x, &last_y);
         data->state = LV_INDEV_STATE_PR;
     }
-    else {
+    else
+    {
         data->state = LV_INDEV_STATE_REL;
     }
 
@@ -58,7 +60,7 @@ static bool touchpad_is_pressed(void)
     return M5.Touch.getCount() > 0;
 }
 
-static void touchpad_get_xy(int32_t * x, int32_t * y)
+static void touchpad_get_xy(int32_t *x, int32_t *y)
 {
     auto detail = M5.Touch.getDetail();
 
@@ -71,7 +73,7 @@ static void encoder_init(void)
     encoder.setup();
 }
 
-static void encoder_read(lv_indev_t * indev_drv, lv_indev_data_t * data)
+static void encoder_read(lv_indev_t *indev_drv, lv_indev_data_t *data)
 {
     data->enc_diff = encoder.getCount(true);
     data->state = M5.BtnA.isPressed() ? LV_INDEV_STATE_PR : LV_INDEV_STATE_REL;
