@@ -31,7 +31,7 @@ jobs:
         if: ${{ matrix.example == 'examples/native_sdl' }}
         run: |
           sudo apt-get update
-          sudo apt-get install -y libsdl2 libsdl2-dev
+          sudo apt-get install -y libsdl2-dev
 
       - name: Build PlatformIO examples
         run: pio run --project-dir ${{ matrix.example }}
