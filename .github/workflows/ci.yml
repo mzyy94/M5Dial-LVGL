@@ -13,6 +13,7 @@ jobs:
           - examples/dial_number
           - examples/native_sdl
           - examples/qr_code
+          - examples/new_font
 
     steps:
       - uses: actions/checkout@v4
