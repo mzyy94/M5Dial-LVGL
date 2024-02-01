@@ -49,13 +49,25 @@ Please refer to examples for more details.
 |![hello-world]|![touch-button]|![dial-number]|
 |Simple drawing|  Touch input  | Encoder input|
 
+|  [qr_code]  |  [new_font] | [native_sdl]|
+|:-----------:|:-----------:|:-----------:|
+| ![qr-code]  | ![new-font] |![native-sdl]|
+|Custom config|External font|  PC preview |
+
+
 [hello_world]: ./examples/hello_world
 [touch_button]: ./examples/touch_button
 [dial_number]: ./examples/dial_number
+[qr_code]: ./examples/qr_code
+[new_font]: ./examples/new_font
+[native_sdl]: ./examples/native_sdl
 
 [hello-world]: ./examples/hello_world/preview.png
 [touch-button]: ./examples/touch_button/preview.png
 [dial-number]: ./examples/dial_number/preview.png
+[qr-code]: ./examples/qr_code/preview.png
+[new-font]: ./examples/new_font/preview.png
+[native-sdl]: ./examples/native_sdl/preview.png
 
 ## License
 
