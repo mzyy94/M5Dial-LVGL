@@ -53,9 +53,9 @@ Please refer to examples for more details.
 [touch_button]: ./examples/touch_button
 [dial_number]: ./examples/dial_number
 
-[hello-world]: ./docs/hello-world.png
-[touch-button]: ./docs/touch-button.png
-[dial-number]: ./docs/dial-number.png
+[hello-world]: ./examples/hello_world/preview.png
+[touch-button]: ./examples/touch_button/preview.png
+[dial-number]: ./examples/dial_number/preview.png
 
 ## License
 
