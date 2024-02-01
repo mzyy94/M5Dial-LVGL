@@ -12,6 +12,7 @@ jobs:
           - examples/touch_button
           - examples/dial_number
           - examples/native_sdl
+          - examples/qr_code
 
     steps:
       - uses: actions/checkout@v4
@@ -42,6 +43,7 @@ jobs:
       matrix:
         example:
           - examples/dial_number
+          - examples/qr_code
 
     steps:
       - uses: actions/checkout@v4

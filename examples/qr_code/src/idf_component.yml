@@ -1,0 +1,3 @@
+dependencies:
+  mzyy94/M5Dial-LVGL:
+    path: ../../../../M5Dial-LVGL
