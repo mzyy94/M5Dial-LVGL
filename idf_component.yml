@@ -1,10 +1,10 @@
 dependencies:
   m5stack/M5Unified:
     git: https://github.com/m5stack/M5Unified
-    version: 0.1.12
+    version: 0.1.13
   m5stack/M5GFX:
     git: https://github.com/m5stack/M5GFX
-    version: 0.1.12
+    version: 0.1.13
   lvgl/lvgl:
     git: https://github.com/lvgl/lvgl
     version: v9.0.0
